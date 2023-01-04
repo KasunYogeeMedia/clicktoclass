@@ -37,7 +37,9 @@ if (isset($_POST['register'])) {
 			$success_msg = 1;
 		} else {
 			//pass
-			if (mysqli_query($con, "INSERT INTO lmsregister (stnumber,email,dob,gender,school,district,town,pcontactnumber,pemail,pname,fullname,contactnumber, address, level,password, image, add_date, status, ip_address, relogin, reloging_ip, payment, verifycode) VALUES ('$stnumber','$email','$dob','$gender','$school','$district','$town','$pcontactnumber','$pemail','$pname','$fullname','$contactnumber','$address','$level','$password','', CURRENT_TIMESTAMP, '1', '', '0', '0', '0', '')")) {
+			// if (mysqli_query($con, "INSERT INTO lmsregister (stnumber,email,dob,gender,school,district,town,pcontactnumber,pemail,pname,fullname,contactnumber, address, level,password, image, add_date, status, ip_address, relogin, reloging_ip, payment, verifycode) VALUES ('$stnumber','$email','$dob','$gender','$school','$district','$town','$pcontactnumber','$pemail','$pname','$fullname','$contactnumber','$address','$level','$password','', CURRENT_TIMESTAMP, '1', '', '0', '0', '0', '')")) {
+
+			if (mysqli_query($con, "INSERT INTO lmsregister (stnumber,email,dob,district,fullname,contactnumber, level,password, image, add_date, status, ip_address, relogin, reloging_ip, payment, verifycode) VALUES ('$stnumber','$email','$dob','$district','$fullname','$contactnumber','$level','$password','', CURRENT_TIMESTAMP, '1', '', '0', '0', '0', '')")) {
 
 				if (!empty($_POST['subjects'])) {
 					foreach ($_POST['subjects'] as $subject_id) {
@@ -48,7 +50,7 @@ if (isset($_POST['register'])) {
 				$to = "+94" . (int)mysqli_real_escape_string($conn, $_POST['contactnumber']);
 				$message_text = "Congratulations on joining Atlas Learn! To log in please use the below details.\nUser name: $contactnumber\npassword: $_POST[password]\n";
 				$message = urlencode($message_text);
-				send_sms($to,$message_text);
+				send_sms($to, $message_text);
 
 				echo "<img src=''>";
 
@@ -174,12 +176,23 @@ if (isset($_POST['register'])) {
 		}
 	</style>
 	<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5RH22F3');</script>
-<!-- End Google Tag Manager -->
+	<script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-5RH22F3');
+	</script>
+	<!-- End Google Tag Manager -->
 
 
 </head>
@@ -187,9 +200,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
 	<!-- Signup Start -->
 	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RH22F3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RH22F3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	<div class="sign_in_up_bg">
 		<div class="container">
 			<div class="row justify-content-lg-center justify-content-md-center">
@@ -299,7 +311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									xhttp.send();
 								}
 							</script>
-								<?php /*
+							<?php /*
 								<div class="col-lg-6">
 									<div class="single-form">
 										<label style="font-weight:bold;text-align:left;">Gender</label>
@@ -310,9 +322,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									</div>
 								</div>
 								
-							</div>*/?>
-							
-								<?php /*
+							</div>*/ ?>
+
+							<?php /*
 								<div class="row">
 								<div class="col-lg-6">
 									<div class="single-form">
@@ -322,8 +334,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 																																						} ?>">
 									</div>
 								</div>
-								*/?>
-								
+								*/ ?>
+
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="single-form">
@@ -346,7 +358,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 																																						} ?>">
 									</div>
 								</div>
-								*/?>
+								*/ ?>
 								<div class="col-lg-12">
 									<div class="single-form">
 										<label style="font-weight:bold;text-align:left;">District</label>
@@ -411,7 +423,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										<input name="pcontactnumber" type="text" placeholder="Enter Parent Phone Number" class="form-control pcontactnumber" value="" maxlength="10" minlength="10">
 									</div>
 								</div>
-							</div> */?>
+							</div> */ ?>
 
 							<div class="row">
 								<div class="col-lg-6">
@@ -431,8 +443,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<div class="row">
 								<div class="col" style="max-width:10%;">
 									<div class="single-form">
-									<input style="width: 20px;margin-top: 10px;" type="checkbox" name="agree" id="agree_checkbox" value="yes" />
-										
+										<input style="width: 20px;margin-top: 10px;" type="checkbox" name="agree" id="agree_checkbox" value="yes" />
+
 									</div>
 								</div>
 								<div class="col">
@@ -470,17 +482,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script src="profile/js/custom.js"></script>
 	<script src="profile/js/night-mode.js"></script>
 	<script>
-	$(document).ready(function(){
-        $('input[type="checkbox"]').click(function(){
-            if($(this).prop("checked") == true){
-                $(':input[type="submit"]').prop('disabled', false);
-            }
-            else if($(this).prop("checked") == false){
-                $(':input[type="submit"]').prop('disabled', true);
-            }
-        });
-    });
-</script>
+		$(document).ready(function() {
+			$('input[type="checkbox"]').click(function() {
+				if ($(this).prop("checked") == true) {
+					$(':input[type="submit"]').prop('disabled', false);
+				} else if ($(this).prop("checked") == false) {
+					$(':input[type="submit"]').prop('disabled', true);
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>

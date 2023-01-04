@@ -1,9 +1,9 @@
 <?php
 
 	$server = "localhost";
-	$username = "root";
-	$pass = "";
-	$db = "clicktoclass";
+	$username = "clicktoclass_clicktoclass";
+	$pass = "Aj29%_@zlOsx";
+	$db = "clicktoclass_clicktoclass";
 
 	//create connection 
 
@@ -28,7 +28,7 @@
 
 	function send_sms($receiver_number,$messsage)
     {
-		$conn = mysqli_connect("localhost","yogeedev_atlas","uZ^K7gEw^PZvmS^","yogeedev_atlas");
+		$conn = mysqli_connect("localhost","clicktoclass_clicktoclass","Aj29%_@zlOsx","clicktoclass_clicktoclass");
 		$sms=mysqli_query($conn,"SELECT * FROM lmssms WHERE id=1");
 		$sms_resalt=mysqli_fetch_array($sms);
 		$sender_id = $sms_resalt['sender_id'];
