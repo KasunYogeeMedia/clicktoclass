@@ -37,9 +37,7 @@ if (isset($_POST['register'])) {
 			$success_msg = 1;
 		} else {
 			//pass
-			// if (mysqli_query($con, "INSERT INTO lmsregister (stnumber,email,dob,gender,school,district,town,pcontactnumber,pemail,pname,fullname,contactnumber, address, level,password, image, add_date, status, ip_address, relogin, reloging_ip, payment, verifycode) VALUES ('$stnumber','$email','$dob','$gender','$school','$district','$town','$pcontactnumber','$pemail','$pname','$fullname','$contactnumber','$address','$level','$password','', CURRENT_TIMESTAMP, '1', '', '0', '0', '0', '')")) {
-
-			if (mysqli_query($con, "INSERT INTO lmsregister (stnumber,email,dob,district,fullname,contactnumber, level,password, image, add_date, status, ip_address, relogin, reloging_ip, payment, verifycode) VALUES ('$stnumber','$email','$dob','$district','$fullname','$contactnumber','$level','$password','', CURRENT_TIMESTAMP, '1', '', '0', '0', '0', '')")) {
+			if (mysqli_query($con, "INSERT INTO lmsregister (stnumber,email,dob,gender,school,district,town,pcontactnumber,pemail,pname,fullname,contactnumber, address, level,password, image, add_date, status, ip_address, relogin, reloging_ip, payment, verifycode) VALUES ('$stnumber','$email','$dob','$gender','$school','$district','$town','$pcontactnumber','$pemail','$pname','$fullname','$contactnumber','$address','$level','$password','', CURRENT_TIMESTAMP, '1', '', '0', '0', '0', '')")) {
 
 				if (!empty($_POST['subjects'])) {
 					foreach ($_POST['subjects'] as $subject_id) {
@@ -50,7 +48,7 @@ if (isset($_POST['register'])) {
 				$to = "+94" . (int)mysqli_real_escape_string($conn, $_POST['contactnumber']);
 				$message_text = "Congratulations on joining Atlas Learn! To log in please use the below details.\nUser name: $contactnumber\npassword: $_POST[password]\n";
 				$message = urlencode($message_text);
-				send_sms($to, $message_text);
+				send_sms($to,$message_text);
 
 				echo "<img src=''>";
 
@@ -172,27 +170,16 @@ if (isset($_POST['register'])) {
 		}
 
 		.btn-primary:hover {
-			border-color: #E62129;
+			border-color: #f36a22;
 		}
 	</style>
 	<!-- Google Tag Manager -->
-	<script>
-		(function(w, d, s, l, i) {
-			w[l] = w[l] || [];
-			w[l].push({
-				'gtm.start': new Date().getTime(),
-				event: 'gtm.js'
-			});
-			var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s),
-				dl = l != 'dataLayer' ? '&l=' + l : '';
-			j.async = true;
-			j.src =
-				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-			f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-5RH22F3');
-	</script>
-	<!-- End Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5RH22F3');</script>
+<!-- End Google Tag Manager -->
 
 
 </head>
@@ -200,8 +187,9 @@ if (isset($_POST['register'])) {
 <body>
 	<!-- Signup Start -->
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RH22F3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RH22F3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 	<div class="sign_in_up_bg">
 		<div class="container">
 			<div class="row justify-content-lg-center justify-content-md-center">
@@ -221,7 +209,7 @@ if (isset($_POST['register'])) {
 							<?php if ($success_msg == 1) { ?><div class="alert alert-primary" style="font-weight:bold;background-color:#007bff;color:#ffffff;">Sorry! You are already registered.</div><?php } ?>
 							<?php if ($success_msg == 2) { ?><div class="alert alert-danger" style="font-weight:bold;background-color:#dc3545;color:#ffffff;">Error! The Re-Enter Password you entered does not match.</div><?php } ?>
 							<?php if ($success_msg == 3) { ?><div class="alert alert-danger" style="font-weight:bold;background-color:#dc3545;color:#ffffff;">Error! Your entered details something is wrong. Please try again.</div><?php } ?>
-							<?php if (isset($_GET['success'])) { ?><div class="alert alert-success" style="font-weight:bold;background-color:#E62129;color:#ffffff;"> Thanks for registering! Sign in now and start learning right away! </div><?php } ?>
+							<?php if (isset($_GET['success'])) { ?><div class="alert alert-success" style="font-weight:bold;background-color:#f36a22;color:#ffffff;"> Thanks for registering! Sign in now and start learning right away! </div><?php } ?>
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="single-form">
@@ -311,7 +299,7 @@ if (isset($_POST['register'])) {
 									xhttp.send();
 								}
 							</script>
-							<?php /*
+								<?php /*
 								<div class="col-lg-6">
 									<div class="single-form">
 										<label style="font-weight:bold;text-align:left;">Gender</label>
@@ -322,9 +310,9 @@ if (isset($_POST['register'])) {
 									</div>
 								</div>
 								
-							</div>*/ ?>
-
-							<?php /*
+							</div>*/?>
+							
+								<?php /*
 								<div class="row">
 								<div class="col-lg-6">
 									<div class="single-form">
@@ -334,8 +322,8 @@ if (isset($_POST['register'])) {
 																																						} ?>">
 									</div>
 								</div>
-								*/ ?>
-
+								*/?>
+								
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="single-form">
@@ -358,7 +346,7 @@ if (isset($_POST['register'])) {
 																																						} ?>">
 									</div>
 								</div>
-								*/ ?>
+								*/?>
 								<div class="col-lg-12">
 									<div class="single-form">
 										<label style="font-weight:bold;text-align:left;">District</label>
@@ -423,7 +411,7 @@ if (isset($_POST['register'])) {
 										<input name="pcontactnumber" type="text" placeholder="Enter Parent Phone Number" class="form-control pcontactnumber" value="" maxlength="10" minlength="10">
 									</div>
 								</div>
-							</div> */ ?>
+							</div> */?>
 
 							<div class="row">
 								<div class="col-lg-6">
@@ -443,8 +431,8 @@ if (isset($_POST['register'])) {
 							<div class="row">
 								<div class="col" style="max-width:10%;">
 									<div class="single-form">
-										<input style="width: 20px;margin-top: 10px;" type="checkbox" name="agree" id="agree_checkbox" value="yes" />
-
+									<input style="width: 20px;margin-top: 10px;" type="checkbox" name="agree" id="agree_checkbox" value="yes" />
+										
 									</div>
 								</div>
 								<div class="col">
@@ -461,7 +449,7 @@ if (isset($_POST['register'])) {
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="single-form">
-										<input type="submit" id="submit" disabled="" name="register" value="Register" class="btn btn-primary btn-block" style="background:#E62129;color:#ffffff; border-color: #E62129;">
+										<input type="submit" id="submit" disabled="" name="register" value="Register" class="btn btn-primary btn-block" style="background:#f36a22;color:#ffffff; border-color: #f36a22;">
 									</div>
 								</div>
 							</div>
@@ -482,16 +470,17 @@ if (isset($_POST['register'])) {
 	<script src="profile/js/custom.js"></script>
 	<script src="profile/js/night-mode.js"></script>
 	<script>
-		$(document).ready(function() {
-			$('input[type="checkbox"]').click(function() {
-				if ($(this).prop("checked") == true) {
-					$(':input[type="submit"]').prop('disabled', false);
-				} else if ($(this).prop("checked") == false) {
-					$(':input[type="submit"]').prop('disabled', true);
-				}
-			});
-		});
-	</script>
+	$(document).ready(function(){
+        $('input[type="checkbox"]').click(function(){
+            if($(this).prop("checked") == true){
+                $(':input[type="submit"]').prop('disabled', false);
+            }
+            else if($(this).prop("checked") == false){
+                $(':input[type="submit"]').prop('disabled', true);
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
