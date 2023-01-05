@@ -108,7 +108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="col-lg-6 col-md-8">
 					<div class="sign_form">
 						<div class="main_logo25" id="logo">
-							<a href="index.html" title="Home "> <img src="./dashboard/settings/logo/<?php echo $main_logo; ?>" class="img-responsive" alt="Atlas"></a>
+							<a href="index.html" title="Home "> <img src="./dashboard/settings/logo/<?php echo $main_logo; ?>" class="img-responsive" alt="Click to Class"></a>
 						</div>
 						<h2>Welcome to <?php echo $application_name; ?></h2>
 						<p>Log In to <?php echo $application_name; ?> Account!</p>

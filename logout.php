@@ -4,6 +4,6 @@ session_start();
 session_unset();
 session_destroy();
 setcookie("reid","", time()-60, "/");
-header('location:https://atlaslearn.lk');
+header('location:https://clicktoclass.lk');
 die();
 ?>

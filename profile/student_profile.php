@@ -711,29 +711,13 @@ if (isset($_POST['submit_bt'])) {
 									<div class="value_props">
 										<h3>ගෙවීම් කළ හැකි ගිණුම් අංකය</h3>
 										<div class="value_content">
-											<p>බැංකුව : <strong>HNB</strong>
-												<br> ගිණුම් අංකය : 002010566367
-												<br> ශාඛාව : <strong>City Office</strong>
-												<br> ගිණුමේ නම : Atlas Axillia Company. (Private) Limited
+											<p>බැංකුව : <strong>Bane Name</strong>
+												<br> ගිණුම් අංකය : Account No
+												<br> ශාඛාව : <strong>Branch</strong>
+												<br> ගිණුමේ නම : Account Name
 											</p>
 										</div>
 										
-										<br>
-										<div class="value_content">
-											<p>බැංකුව : <strong>Sampath Bank</strong>
-												<br> ගිණුම් අංකය : 013610002360
-												<br> ශාඛාව : <strong>Peliyagoda Branch</strong>
-												<br> ගිණුමේ නම : ATLAS AXILLIA COMPANY
-											</p>
-										</div>
-										<br>
-										<div class="value_content">
-											<p>බැංකුව : <strong>People’s Bank</strong>
-												<br> ගිණුම් අංකය : 004100110001637
-												<br> ශාඛාව : <strong>D R Wijewardena  Mawatha Branch</strong>
-												<br> ගිණුමේ නම : ATLAS AXILLIA COMPANY
-											</p>
-										</div>
 									</div>
 								</div>
 
@@ -848,7 +832,7 @@ ORDER BY ss.name");
 										<input type="month" class="form-control" name="paymonth" value="<?php echo date("Y-m"); ?>">
 										<br>
 
-										<label class="control-label" for="basicinput">සාමාන්‍ය පන්ති ගාස්තු ගෙවූ දරුවන් පමණක් බැංකු රිසිට් පත මෙතනින් upload කරන්න. පන්ති ගාස්තු සදහා සහන (Discounts/Offers) ලැබූ සිසුන් එම bank receipt පත 0773851246 අංකයට නම , Atlas Learn LMS එකෙහි register වූ දුරකතන අංකය , විෂය සහ ගුරුවරයා , ඒ ඒ විෂයට ගෙවූ ගාස්තුව වෙන වෙනම සදහන් කර WhatsApp කරන්න.සාමාන්‍ය පන්ති ගාස්තු ගෙවන දරුවන් සම්බන්ධ වන විෂයන් ඉදිරියේ හරි ලකුණු යොදා (click on the relevant tick box) මෙහි bank receipt පතෙහි photo එකක් හෝ screenshot එකක් upload කරන්න. (Pdf file upload කල නොහැක)</label>
+										<label class="control-label" for="basicinput">සාමාන්‍ය පන්ති ගාස්තු ගෙවූ දරුවන් පමණක් බැංකු රිසිට් පත මෙතනින් upload කරන්න. පන්ති ගාස්තු සදහා සහන (Discounts/Offers) ලැබූ සිසුන් එම bank receipt පත "phone No" අංකයට නම , LMS එකෙහි register වූ දුරකතන අංකය , විෂය සහ ගුරුවරයා , ඒ ඒ විෂයට ගෙවූ ගාස්තුව වෙන වෙනම සදහන් කර WhatsApp කරන්න.සාමාන්‍ය පන්ති ගාස්තු ගෙවන දරුවන් සම්බන්ධ වන විෂයන් ඉදිරියේ හරි ලකුණු යොදා (click on the relevant tick box) මෙහි bank receipt පතෙහි photo එකක් හෝ screenshot එකක් upload කරන්න. (Pdf file upload කල නොහැක)</label>
 										<label for="fileName"><img src="images/payslip.png" id="yourImgTag" style="width:40%;cursor: pointer;" /></label>
 
 										<input type="file" name="fileName" id="fileName" value="" class="form-control" required onChange="JavaScript:dis_name(this.value);">

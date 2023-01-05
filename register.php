@@ -46,7 +46,7 @@ if (isset($_POST['register'])) {
 				}
 
 				$to = "+94" . (int)mysqli_real_escape_string($conn, $_POST['contactnumber']);
-				$message_text = "Congratulations on joining Atlas Learn! To log in please use the below details.\nUser name: $contactnumber\npassword: $_POST[password]\n";
+				$message_text = "Congratulations on joining Click to Class! To log in please use the below details.\nUser name: $contactnumber\npassword: $_POST[password]\n";
 				$message = urlencode($message_text);
 				send_sms($to,$message_text);
 
@@ -195,8 +195,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div class="row justify-content-lg-center justify-content-md-center">
 				<div class="col-lg-12">
 					<div class="main_logo25" id="logo">
-						<!--<a href="index.php"><img src="./inc/images/Atlas-logo.png" alt="" style="text-align:center;"></a>-->
-						<!--<a href="index.php"><img class="img-responsive" src="./inc/images/Atlas-logo.png" alt="Atlas"></a>-->
+						<!--<a href="index.php"><img src="./inc/images/logo.png" alt="" style="text-align:center;"></a>-->
+						<!--<a href="index.php"><img class="img-responsive" src="./inc/images/logo.png" alt="Click to Class"></a>-->
 					</div>
 				</div>
 
@@ -437,7 +437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 								<div class="col">
 									<div class="single-form">
-										<label style="font-weight:bold; text-align:left" for="agree"> I agree to Atlas Learn's <a href="https://atlaslearn.lk/terms-conditions/" target="_blank">Terms & Conditions</a> and Privacy Policy
+										<label style="font-weight:bold; text-align:left" for="agree"> I agree to Click to Class's <a href="https://clicktoclass.lk/terms-conditions/" target="_blank">Terms & Conditions</a> and Privacy Policy
 											and allow my child to be enrolled onto the platform </label>
 									</div>
 									<div id="result" style="background: yellow;"></div>

@@ -173,7 +173,7 @@ if(!isset($error)){
     
                     $firstname = $application_name;
                     $lastname ='Institue' ;
-                    $email = 'nadeeka.j@atlasaxillia.com';
+                    $email = 'test@clicktoclass.lk';
                     $contact = '+94773853994';
                     $app_id = $app_id;
                     $hash_salt = $hash_salt;

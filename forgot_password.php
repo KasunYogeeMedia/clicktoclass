@@ -31,7 +31,7 @@ if(isset($_POST['send_code'])){
 	$_SESSION['contactnumber']=$contactnumber;
 	
 	if(mysqli_query($conn,"UPDATE lmsregister SET verifycode='$code' WHERE contactnumber='$contactnumber'")){
-	$message_text="To reset Atlas Learn password please use the below code:$code";
+	$message_text="To reset password please use the below code:$code";
 	$message=urlencode($message_text);
 	
 	send_sms($to,$message_text);
