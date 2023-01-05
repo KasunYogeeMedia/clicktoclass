@@ -170,7 +170,7 @@ if (isset($_POST['register'])) {
 		}
 
 		.btn-primary:hover {
-			border-color: #f36a22;
+			border-color: #E62129;
 		}
 	</style>
 	<!-- Google Tag Manager -->
@@ -209,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<?php if ($success_msg == 1) { ?><div class="alert alert-primary" style="font-weight:bold;background-color:#007bff;color:#ffffff;">Sorry! You are already registered.</div><?php } ?>
 							<?php if ($success_msg == 2) { ?><div class="alert alert-danger" style="font-weight:bold;background-color:#dc3545;color:#ffffff;">Error! The Re-Enter Password you entered does not match.</div><?php } ?>
 							<?php if ($success_msg == 3) { ?><div class="alert alert-danger" style="font-weight:bold;background-color:#dc3545;color:#ffffff;">Error! Your entered details something is wrong. Please try again.</div><?php } ?>
-							<?php if (isset($_GET['success'])) { ?><div class="alert alert-success" style="font-weight:bold;background-color:#f36a22;color:#ffffff;"> Thanks for registering! Sign in now and start learning right away! </div><?php } ?>
+							<?php if (isset($_GET['success'])) { ?><div class="alert alert-success" style="font-weight:bold;background-color:#E62129;color:#ffffff;"> Thanks for registering! Sign in now and start learning right away! </div><?php } ?>
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="single-form">
@@ -449,7 +449,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="single-form">
-										<input type="submit" id="submit" disabled="" name="register" value="Register" class="btn btn-primary btn-block" style="background:#f36a22;color:#ffffff; border-color: #f36a22;">
+										<input type="submit" id="submit" disabled="" name="register" value="Register" class="btn btn-primary btn-block" style="background:#E62129;color:#ffffff; border-color: #E62129;">
 									</div>
 								</div>
 							</div>
