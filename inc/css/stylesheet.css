@@ -997,11 +997,11 @@ text-align: center;
 	/*margin: 0 auto 3.5em auto;*/
 	/*width: 9em;*/
 	margin: 0 auto 3.5em auto;
-	background: url(../images/logo.png);
-	background-size: cover;
+	background: url(../images/preloader.png);
+	background-size: contain;
 	background-repeat: no-repeat;
-	height: 227px;
-	width: 570px;
+	height: 279px;
+	width: 400px;
 }
 
 .ctn-preloader .animation-preloader .txt-loading {
